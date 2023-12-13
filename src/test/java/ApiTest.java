@@ -14,7 +14,7 @@ public class ApiTest extends TestConfig {
                 .then().log().body().statusCode(200);
     }
 }
-/* "1" - первый способ определить параметр, у какого индекса мы будем брать из URI
+/* "1" - первый способ определить параметр, какого индекса мы будем брать из URI
    "SWAPIE_GET_PEOPLE" - endpoint (в нашем случае - "/people")
    ".log()" - логирование (можно логировать requests и responses, URI, exceptions etc.)
    ".log().body()" - логирование response, идет после .then */
