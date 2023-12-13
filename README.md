@@ -12,6 +12,7 @@
 - Rest Assured, TestNG
 - site - https://swapi.dev/ , https://jsonplaceholder.typicode.com/
 - split into Config and Constants
+- RequestSpecification / ResponseSprecification
 
 ## Additional:
 

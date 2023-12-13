@@ -38,4 +38,18 @@ public class JsonPlaceHolderTest extends TestConfig {
                 .when().delete(JSON_PLACEHOLDER_DELETE)
                 .then().log().body().statusCode(200);
     }
+
+    /* Далее тест с методом POST with JSON */
+    @Test
+    public void PostWithJSON(){
+        String postBodyJson = "{\n" +
+                "\"title\":\"foo\",\n" +
+                "\"body\":\"bar\",\n" +
+                "\"userId\":1,\n" +
+                "}";
+
+        given().body(postBodyJson).log().all()
+                .when().post(JSON_PLACEHOLDER_POST)
+                .then().log().body().statusCode(201); //при методе POST - всегда 201 СТАТУС-КОД
+    }
 }
