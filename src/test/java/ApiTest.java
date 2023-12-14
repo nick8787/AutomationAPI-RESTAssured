@@ -1,6 +1,9 @@
 import config.TestConfig;
+import io.restassured.http.Headers;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
+
+import java.util.Map;
 
 import static constants.Constants.Actions.SWAPI_GET_PEOPLE;
 import static constants.Constants.Path.SWAPI_PATH;
@@ -59,6 +62,33 @@ public class ApiTest extends TestConfig {
         String jsonResponseAsString = response.asString();
         System.out.println(jsonResponseAsString);
     }
+
+    /* Извлекаем Coockies из Response, с помощью метода extract */
+    @Test
+    public void getCoockieFromResponse(){
+        Response response =
+                given()
+                        .spec(requestSpecificationForSwapi).log().uri()
+                        .when().get(SWAPI_PATH)
+                        .then().extract().response();
+        Map<String, String> allCoockie = response.getCookies();
+        System.out.println("allCoockie = " + allCoockie);
+    }
+    /* Извлекаем Headers из Response, с помощью метода extract */
+    @Test
+    public void getHeadersFromResponse(){
+        Response response =
+                given()
+                        .spec(requestSpecificationForSwapi).log().uri()
+                        .when().get(SWAPI_PATH)
+                        .then().extract().response();
+        Headers headers = response.getHeaders();
+        System.out.println("headers = " + headers);
+
+        String contentType = response.getContentType();
+        System.out.println("contentType = " + contentType); //выводим конкретный хедер
+    }
+
 }
 
 

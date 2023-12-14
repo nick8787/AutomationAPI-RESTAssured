@@ -6,8 +6,8 @@
 
 - 1.Проверить правильно ли подтягивается инфа с ВЕБ'а.
 - 2.Использование логирования и других методов.
-- 3.Сделать assertions используя класс Matchers
-- 4.Извлекаем данные методом extract
+- 3.Сделать assertions используя класс Matchers.
+- 4.Извлекаем данные методом extract.
 
 ## I've applied:
 
@@ -18,12 +18,12 @@
 - class Matchers for assertions
 - method Extract to recieve data from requests
 
-## Что за чем идет:
+## Process creating:
 
-- 1.В классе TestConfig - BeforeClass - сетапим URL, PATH
-- 2.В классе Constants - создаем классы в которых переменные будут и значения (endpoint, path, url)
-- 3.123
-- 4.123
+- 1.В классе TestConfig - метод BeforeClass - сетапим URL, PATH.
+- 2.В классе Constants - создаем классы в которых переменные будут и значения (endpoint, path, url).
+- 3.В классе ApiTest - тесты на валидацию данных, assertions, извлекаем данные из запросов.
+- 4.В классе JsonPlaceHolderTest - используем (GET, PUT, POST, DELETE) + queryParams method.
 
 ## Additional:
 
