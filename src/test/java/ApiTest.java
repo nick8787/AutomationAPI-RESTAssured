@@ -1,4 +1,5 @@
 import config.TestConfig;
+import io.restassured.response.Response;
 import org.testng.annotations.Test;
 
 import static constants.Constants.Actions.SWAPI_GET_PEOPLE;
@@ -42,8 +43,21 @@ public class ApiTest extends TestConfig {
                 .when().get(SWAPI_PATH + SWAPI_GET_PEOPLE)
                 .then()
                 .body("count", equalTo(82))
+                .body("results.name[0]", equalTo("Luke Skywalker"))
+                //results.name[0] - то, что лежит в массиве Results, [0] - первый ключ и его значение
                 .log().body(); //лог - выводит "body-ответ"
+    }
 
+    /* Извлекаем данные из Request, с помощью метода extract */
+    @Test
+    public void getAllDataFromRequest(){
+        Response response =
+        given()
+                .spec(requestSpecificationForSwapi).log().uri()
+                .when().get(SWAPI_PATH)
+                .then().extract().response();
+        String jsonResponseAsString = response.asString();
+        System.out.println(jsonResponseAsString);
     }
 }
 

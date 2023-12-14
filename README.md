@@ -7,6 +7,7 @@
 - 1.Проверить правильно ли подтягивается инфа с ВЕБ'а.
 - 2.Использование логирования и других методов.
 - 3.Сделать assertions используя класс Matchers
+- 4.Извлекаем данные методом extract
 
 ## I've applied:
 
@@ -14,6 +15,15 @@
 - site - https://swapi.dev/ , https://jsonplaceholder.typicode.com/
 - split into Config and Constants
 - RequestSpecification / ResponseSprecification
+- class Matchers for assertions
+- method Extract to recieve data from requests
+
+## Что за чем идет:
+
+- 1.В классе TestConfig - BeforeClass - сетапим URL, PATH
+- 2.В классе Constants - создаем классы в которых переменные будут и значения (endpoint, path, url)
+- 3.123
+- 4.123
 
 ## Additional:
 
