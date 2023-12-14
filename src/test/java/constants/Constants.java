@@ -11,12 +11,14 @@ public class Constants {
     }
 
     public static class Servers{
-        public static String SWAPI_URL = "https://jsonplaceholder.typicode.com"; //тут было "https://swapi.dev"
+        public static String SWAPI_URL = "https://swapi.dev";
+        public static String JSON_PLACEHOLDER_URL = "https://jsonplaceholder.typicode.com";
         public static String GOOGLE_PLACES_PATH;
     }
 
     public static class Path{
-        public static String SWAPI_PATH = ""; //тут было "/api"
+        public static String SWAPI_PATH = "/api";
+        public static String JSON_PLACEHOLDER_PATH = "";
         public static String GOOGLE_PLACES_PATH;
     }
 
